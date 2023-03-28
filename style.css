@@ -1,0 +1,101 @@
+
+
+body{
+    background-image: url("images/camuflaje.jpg");      
+}
+
+
+.nav{
+    background-color: #55823a;
+}
+
+.icono{
+    margin: 15px 5px 15px;
+}
+
+.icono2{
+    margin: 0px 8px 0px 30px;
+}
+.text-nav{
+    color:white;
+    font-size: 14px;
+
+}
+
+
+.icon{
+
+margin: 0px 50px;
+}
+
+.image{
+    text-align: center;
+    justify-content: center;
+    
+}
+
+img{
+    
+    
+    margin: auto;
+    display: block;
+}
+
+
+.pie{
+
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+
+
+.formulario{
+    background-color: white;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+
+.form2{
+    text-align: center;
+    justify-content: center;
+   
+    border: 1px solid gray;
+   
+    
+    margin: 50px;
+    
+    border-radius: 10px;
+
+   
+
+    
+
+}
+
+
+.titulo{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #f6f6f6;
+    height: 50px;
+    margin:0px 0px 15px 0px;
+    border: 1px solid #f6f6f6;
+}
+
+
+
+
+.input2{
+  
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.form-group{
+    margin: 10px;
+}
