@@ -1,6 +1,4 @@
-<?php
-require_once ("db.php");
-?>
+
 <!doctype html>
 <html lang="en">
 
@@ -12,6 +10,8 @@ require_once ("db.php");
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+        
 </head>
 
 <body>
@@ -75,26 +75,9 @@ require_once ("db.php");
                             <label for="staticEmail" class="col-sm-2 col-form-label">Institucion</label>
                             <div class="col-sm-10">
 
-                                <select class="form-control" id="institucion"  name="institucion" required>
+                                <select class="form-control" id="institucion"  name="institucion">
                                     <option value="0">Seleccione:</option>
-                                    <?php
- $conn=conexion();
-$query = "select * from empresa";
-
-    
-
-$sql = mysqli_query($conn, $query) or die(mysqli_error($conn));
-
-$total = mysqli_num_rows($sql);
-
-$i = 0;
-
-while ($vals = mysqli_fetch_array($sql)) {
-
-    echo '<option value="'.$vals['id_empresa'].'">'.$vals['alias_empresa'].'</option>';
-}
-     
-        ?>
+                      
                                 </select>
                             </div>
                         </div>
@@ -104,7 +87,7 @@ while ($vals = mysqli_fetch_array($sql)) {
                             <label for="staticEmail" class="col-sm-2 col-form-label">Curso</label>
                             <div class="col-sm-10">
 
-                                <select class="form-control" id="curso" name="curso" required>
+                                <select class="form-control" id="curso" name="curso">
                                     <option value="0">Seleccione:</option>
         
                                 </select>
@@ -114,21 +97,21 @@ while ($vals = mysqli_fetch_array($sql)) {
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Cedula</label>
                             <div class="col-sm-10">
-                                <input type="input" maxlength="13" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" class="form-control" name="num_representante"  class="form-control" name="cedula" required>
+                                <input type="input" class="form-control" name="cedula" >
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Nombres</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control" name="nombre" required>
+                                <input type="input" class="form-control" name="nombre" >
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Apellidos</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control" name="apellido"  required>
+                                <input type="input" class="form-control" name="apellido" >
                             </div>
                         </div>
 
@@ -136,13 +119,13 @@ while ($vals = mysqli_fetch_array($sql)) {
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Tipo de Sangre</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control" name="tipo_sangre" required>
+                                <input type="input" class="form-control" name="tipo_sangre" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Direccion Domicilio</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control" name="direccion"  required>
+                                <input type="input" class="form-control" name="direccion" >
                             </div>
                         </div>
 
@@ -151,26 +134,9 @@ while ($vals = mysqli_fetch_array($sql)) {
                             <label for="staticEmail" class="col-sm-2 col-form-label">Provincia</label>
                             <div class="col-sm-10">
 
-                                <select class="form-control" id="provincia" name ="provincia" required>
+                                <select class="form-control" id="provincia" name ="provincia">
                                     <option value="0">Seleccione:</option>
-                                    <?php
- $conn=conexion();
-$query = "select id,provincia from tbl_provincia";
-
-    
-
-$sql = mysqli_query($conn, $query) or die(mysqli_error($conn));
-
-$total = mysqli_num_rows($sql);
-
-$i = 0;
-
-while ($vals = mysqli_fetch_array($sql)) {
-
-    echo '<option value="'.$vals['id'].'">'.$vals['provincia'].'</option>';
-}
-     
-        ?>
+                            
                                 </select>
                             </div>
                         </div>
@@ -180,7 +146,7 @@ while ($vals = mysqli_fetch_array($sql)) {
                             <label for="staticEmail" class="col-sm-2 col-form-label">Ciudad</label>
                             <div class="col-sm-10">
 
-                                <select class="form-control" id="ciudad" name="ciudad" required>
+                                <select class="form-control" id="ciudad" name="ciudad">
                                     <option value="0">Seleccione:</option>
         
                                 </select>
@@ -192,7 +158,7 @@ while ($vals = mysqli_fetch_array($sql)) {
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Celular</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control"  maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" class="form-control" name="num_representante"  name="celular" required>
+                                <input type="input" class="form-control" name="celular" >
                             </div>
                         </div>
 
@@ -203,13 +169,13 @@ while ($vals = mysqli_fetch_array($sql)) {
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Representante</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control" name="representante"  required>
+                                <input type="input" class="form-control" name="representante" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Celular Representante</label>
                             <div class="col-sm-10">
-                                <input type="input"  pattern="[0-9]{0,13}"  maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" class="form-control" name="num_representante" required>
+                                <input type="input" class="form-control" name="num_representante" >
                             </div>
                         </div>
 
@@ -217,21 +183,21 @@ while ($vals = mysqli_fetch_array($sql)) {
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">E-mail</label>
                             <div class="col-sm-10">
-                                <input type="email" pattern="^[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,}$" class="form-control" name="correo" required>
+                                <input type="input" class="form-control" name="correo" >
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Unidad Educativa- Estudios Secundarios</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control" name="estudios" required>
+                                <input type="input" class="form-control" name="estudios" >
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Talla Uniforme</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control"  onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" class="form-control" name="num_representante"  name="talla" required>
+                                <input type="input" class="form-control" name="talla" >
                             </div>
                         </div>
 
@@ -239,7 +205,7 @@ while ($vals = mysqli_fetch_array($sql)) {
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Numero de Calzado</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control"  onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" class="form-control" name="num_representante"  name="calzado" required>
+                                <input type="input" class="form-control" name="calzado" >
                             </div>
                         </div>
 
@@ -297,71 +263,20 @@ while ($vals = mysqli_fetch_array($sql)) {
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+Swal.fire({
+  title: 'Exito',
+  text: 'El formulario se ha guardado correctamente',
+  icon: 'success',
+  confirmButtonText: 'OK'
+})
+
+setTimeout(function(){
+ window.location.replace("index.php")
 
 
-
-const categoria = document.getElementById('institucion');
-const producto = document.getElementById('curso');
-
-categoria.addEventListener('change', function() {
-  const idCategoria = categoria.value;
-  if (idCategoria !== '') {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `php/negocios/cursos/verCurso.php?id_institucion=${idCategoria}`, true);
-    xhr.onload = function() {
-      if (this.status === 200) {
-        const productos = JSON.parse(this.responseText);
-        console.log(productos);
-
-        let arregloDeClavesYValores = Object.entries(productos  );
-        console.log("Claves y valores: ", arregloDeClavesYValores[3][1]);
-        let options = '<option value="">Selecciona un curso</option>';
-        arregloDeClavesYValores[3][1].forEach(function(producto) {
-          options += `<option value="${producto.id_curso}">${producto.nombre_curso}</option>`;
-        });
-        producto.innerHTML = options;
-      }
-    };
-    xhr.send();
-  } else {
-    producto.innerHTML = '<option value="">Selecciona un producto</option>';
-  }
-});
-
-
-
-const provincia = document.getElementById('provincia');
-const ciudad = document.getElementById('ciudad');
-
-provincia.addEventListener('change', function() {
-  const idprovincia = provincia.value;
-  if (idprovincia !== '') {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `php/negocios/ciudad/verCiudad.php?id_provincia=${idprovincia}`, true);
-    xhr.onload = function() {
-      if (this.status === 200) {
-        const productos = JSON.parse(this.responseText);
-        console.log(productos);
-
-        let arregloDeClavesYValores = Object.entries(productos);
-        console.log("Claves y valores: ", arregloDeClavesYValores[3][1]);
-        let options = '<option value="">Selecciona una ciudad</option>';
-        arregloDeClavesYValores[3][1].forEach(function(ciudad) {
-          options += `<option value="${ciudad.id_ciudad}">${ciudad.nombre_ciudad}</option>`;
-        });
-        ciudad.innerHTML = options;
-      }
-    };
-    xhr.send();
-  } else {
-    producto.innerHTML = '<option value="">Selecciona un producto</option>';
-  }
-});
-
-
-
+},2000);
 
 
 
@@ -370,6 +285,8 @@ provincia.addEventListener('change', function() {
 
 
 
+
+<script src="sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
